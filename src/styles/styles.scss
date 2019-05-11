@@ -1,4 +1,2 @@
-$brand-color:green;
-*{
-    color: $brand-color;
-}
+@import "./base/settings";
+@import "./base/base";
