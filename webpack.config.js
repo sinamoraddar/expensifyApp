@@ -5,10 +5,10 @@ module.exports = (env) => {
   const isProduction = env === 'production';
   const CSSExtract = new ExtractTextPlugin('styles.css');
   return {
-    entry: `./src/app.js`,
+    entry: './src/app.js',
     output: {
-      path: path.join(__dirname, `public`),
-      filename: `bundle.js`
+      path: path.join(__dirname, 'public', 'dist'),
+      filename: 'bundle.js'
     },
     module: {
       rules: [{
@@ -17,8 +17,8 @@ module.exports = (env) => {
         exclude: /node_modules/
       }, {
         test: /\.s?css$/,
-        use:CSSExtract.extract({
-          use:[
+        use: CSSExtract.extract({
+          use: [
             {
               loader: 'css-loader',
               options: {
@@ -31,14 +31,15 @@ module.exports = (env) => {
       }
       ]
     },
-    plugins:[
+    plugins: [
       CSSExtract
     ],
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       historyApiFallback: true,
-      contentBase: path.join(__dirname, 'public')
+      contentBase: path.join(__dirname, 'public'),
+      publicPath: '/dist/'
     }
   }
-}
+} 
 //entry -> output
