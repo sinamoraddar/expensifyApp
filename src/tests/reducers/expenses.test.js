@@ -51,7 +51,7 @@ test('should edit expense by id', () => {
     };
     const state = expensesReducer(expenses, action);
     expect(state[0].description).toBe('carrot')
-})
+});
 test('should not edit expense if id does not exist', () => {
     const action = {
         type: 'EDIT_EXPENSE',
@@ -62,4 +62,13 @@ test('should not edit expense if id does not exist', () => {
     };
     const state = expensesReducer(expenses, action);
     expect(state).toEqual(expenses);
-})
+});
+
+test('should set expenses', () => {
+    const action = {
+        type: 'SET_EXPENSES',
+        expenses: [expenses[0]]
+    };
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual([expenses[0]])
+});
