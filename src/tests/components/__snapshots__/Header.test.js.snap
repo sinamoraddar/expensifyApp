@@ -18,7 +18,12 @@ exports[`should render header correctly 1`] = `
     aria-current="page"
     to="/create"
   >
-    Create
+    Create Expense
   </NavLink>
+  <button
+    onClick={[Function]}
+  >
+    Log Out
+  </button>
 </header>
 `;

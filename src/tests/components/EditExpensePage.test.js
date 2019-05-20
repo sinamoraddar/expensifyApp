@@ -30,7 +30,7 @@ test('should render editExpensePage', () => {
 test('should handle startEditExpense', () => {
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[2]);
     expect(startEditExpense).toHaveBeenLastCalledWith(expenses[2].id, expenses[2]);
-    expect(history.push).toHaveBeenLastCalledWith('/');
+    expect(history.push).toHaveBeenLastCalledWith('/dashboard');
 })
 //should handle removeExpense
 //spies
@@ -39,5 +39,5 @@ test('should handle startRemoveExpense', () => {
     expect(startRemoveExpense).toHaveBeenLastCalledWith({
         id: expenses[2].id
     });
-    expect(history.push).toHaveBeenLastCalledWith('/');
+    expect(history.push).toHaveBeenLastCalledWith('/dashboard');
 })
