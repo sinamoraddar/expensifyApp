@@ -9,8 +9,9 @@ export class EditExpensePage extends React.Component {
         this.props.history.push('/dashboard');
     }
     onRemove = () => {
-        this.props.startRemoveExpense({ id: this.props.expense.id })
+        this.props.startRemoveExpense({ id: this.props.expense.id });
         this.props.history.push('/dashboard');
+
     }
 
     render() {
